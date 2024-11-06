@@ -53,7 +53,6 @@ const clubs = [
 
 const clubsList = document.getElementById('clubs-list');
 const searchBar = document.getElementById('search-bar');
-const filterType = document.getElementById('filter-type');
 
 // Function to display clubs
 function displayClubs(filteredClubs) {
@@ -70,14 +69,31 @@ function displayClubs(filteredClubs) {
     });
 }
 
-// Function to filter clubs
+// Filter clubs by type
+function filterClubsByType(type) {
+    const filteredClubs = type === 'all' ? clubs : clubs.filter(club => club.type === type);
+    displayClubs(filteredClubs);
+    updateActiveTab(type);
+}
+
+// Update active tab styling
+function updateActiveTab(selectedType) {
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.classList.remove('active');
+        if (button.textContent.toLowerCase() === selectedType) {
+            button.classList.add('active');
+        }
+    });
+}
+
+// Function to filter clubs based on search input
 function filterClubs() {
     const searchText = searchBar.value.toLowerCase();
-    const typeFilter = filterType.value;
-
+    const activeType = document.querySelector('.tab-button.active').textContent.toLowerCase();
+    
     const filteredClubs = clubs.filter(club => {
-        const matchesType = typeFilter === 'all' || club.type === typeFilter;
-        const matchesSearch = club.name.toLowerCase().includes(searchText) || 
+        const matchesType = activeType === 'all' || club.type === activeType;
+        const matchesSearch = club.name.toLowerCase().includes(searchText) ||
                               club.tags.some(tag => tag.toLowerCase().includes(searchText));
         return matchesType && matchesSearch;
     });
@@ -87,7 +103,6 @@ function filterClubs() {
 
 // Event listeners for search and filter
 searchBar.addEventListener('input', filterClubs);
-filterType.addEventListener('change', filterClubs);
 
 // Initial display of all clubs
-displayClubs(clubs);
+filterClubsByType('all');
