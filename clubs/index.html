@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Clubs Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fade-in">
+    <header>
+        <h1>Welcome to Shoolini University Clubs</h1>
+        <p>Discover, join, and engage with your favorite clubs!</p>
+        <button class="cta-button" onclick="navigateToClubs()">Explore Clubs</button>
+    </header>
+    <main>
+        <section id="intro">
+            <h2>Find Your Community</h2>
+            <p>We have clubs for every interest! Whether you're into sports, arts, technology, or community service, you'll find a place to belong here.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Shoolini University. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script for smooth page transition -->
+    <script>
+        function navigateToClubs() {
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = 'uclubs.html';
+            }, 300);
+        }
+    </script>
+</body>
+</html>
