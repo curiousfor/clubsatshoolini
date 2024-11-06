@@ -1,35 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>University Clubs Search</title>
+    <title>Explore Clubs</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Explore Shoolini University's Clubs</h1>
+        <h1>Explore Shoolini University Clubs</h1>
+        <nav>
+            <a href="index.html" class="back-link">Home</a>
+        </nav>
         <p>Find the club that matches your interests!</p>
         <div id="search-container">
             <input type="text" id="search-bar" placeholder="Search clubs...">
             <button id="search-button">Search</button>
-        </div><br>
-        <div id="filters">
-            <label for="filter-type">Type:</label>
-            <select id="filter-type">
-                <option value="all">All</option>
-                <option value="sports">Sports</option>
-                <option value="arts">Arts</option>
-                <option value="tech">Tech</option>
-                <option value="community">Community</option>
-            </select>
         </div>
     </header>
 
+    <!-- Club Category Tabs -->
+    <div id="club-tabs">
+        <button class="tab-button active" onclick="filterClubsByType('all')">All</button>
+        <button class="tab-button" onclick="filterClubsByType('sports')">Sports</button>
+        <button class="tab-button" onclick="filterClubsByType('arts')">Arts</button>
+        <button class="tab-button" onclick="filterClubsByType('tech')">Tech</button>
+        <button class="tab-button" onclick="filterClubsByType('community')">Community</button>
+    </div>
+
     <section id="clubs-list">
-        <!-- Dummy Clubs Data will be inserted here via JavaScript -->
+        <!-- Clubs are dynamically added by JavaScript -->
     </section>
 
     <script src="js2.js"></script>
