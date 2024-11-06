@@ -1,4 +1,4 @@
-
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,22 +6,39 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4faff;
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f2f5; /* Light grey background */
     color: #333;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin: 0;
     overflow-x: hidden;
+    transition: opacity 0.3s ease;
 }
 
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header and Main Content */
 header {
-    background-color: #3A7CA5;
+    background-color: #8a2b2b; /* Softer, darker red */
     color: white;
-    padding: 30px;
+    padding: 40px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-bottom: 5px solid #7a2525;
 }
 
 h1 {
@@ -30,99 +47,102 @@ h1 {
 }
 
 p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+#intro h2 {
+    font-size: 1.8rem;
+    margin: 20px 0;
+    color: #4a4a4a; /* Dark grey for contrast */
+}
+
+#intro p {
+    font-size: 1rem;
+    color: #555; /* Softer grey */
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #7a2525; /* Darker red */
+    color: white;
+    padding: 12px 25px;
     font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-#search-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-#search-bar {
-    padding: 15px;
-    flex: 1;
-    border-radius: 30px 0 0 30px;
     border: none;
-    font-size: 1rem;
-}
-
-#search-button {
-    padding: 15px;
-    background-color: #1E90FF;
-    color: white;
-    border: none;
-    border-radius: 0 30px 30px 0;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-#search-button:hover {
-    background-color: #166bb7;
-}
-
-#filters {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-
-#filter-type {
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: #e0f0ff;
-    font-size: 1rem;
-    margin-left: 10px;
-}
-
-#clubs-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex: 1;
-}
-
-.club-card {
-    background-color: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-align: center;
-}
-
-.club-card:hover {
+.cta-button:hover {
+    background-color: #9a3a3a; /* Slightly lighter on hover */
     transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.club-type {
-    background-color: #1E90FF;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    margin-top: 15px;
-    display: inline-block;
-}
-
+/* Footer */
 footer {
-    background-color: #3A7CA5;
+    background-color: #333; /* Dark grey footer */
     color: white;
     text-align: center;
     padding: 15px;
     font-size: 0.9rem;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     margin-top: auto;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Club Tabs */
+#club-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+    background-color: #8a2b2b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tab-button:hover,
+.tab-button.active {
+    background-color: #9a3a3a; /* Slightly lighter red */
+    transform: scale(1.05);
+}
+
+/* Club Card Animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.club-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #ddd;
+    animation: fadeInScale 0.5s ease;
 }
