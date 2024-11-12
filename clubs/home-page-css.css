@@ -1,14 +1,16 @@
 body{
     background-color: #fffefe;
+    margin-top: -29;
 }
 .header{
-    background-image: linear-gradient(rgba(30, 6, 4, 0.7),rgba(30, 4, 4, 0.7))
+    background-image: linear-gradient(rgba(30, 6, 4, 0.7),rgba(54, 24, 24, 0.7))
                         ,url(images/shoolini\ campus.jpg);
     min-height: 100vh;
     width: 100%;
     background-position: center;
     background-size: cover;
     position: relative;
+   
     
 }
 nav{
@@ -19,7 +21,7 @@ nav{
     
 }
 nav img{
-    width: 250px;
+    width: 100px;
     margin-left: -59px;
     margin-top: -20px;
 }
@@ -73,7 +75,7 @@ nav img{
 }
 .text-box p{
     margin: 10px 0 40px;
-    font-size: 15px;
+    font-size: 30px;
     color: white;
 }
 .text-box span a{
@@ -85,8 +87,8 @@ nav img{
     text-decoration: none;
     color: white;
     border: 1px solid white;
-    padding: 12px 34px;
-    font-size: 13px;
+    padding: 20px 50px;
+    font-size: 22px;
     background: transparent;
     position: relative;
     cursor: pointer;
@@ -99,24 +101,7 @@ nav img{
 nav .fa{
     display: none;
 }
-.tooltip{
-    position:absolute;
-    background-color: gray;
-    color: white;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 4px;
-    padding-bottom:  4px;
-    border-radius: 2px;
-    font-size: 12px;
-    bottom: 180px;
-    left:380px;
-    opacity: 0;
-    transition: opacity 0.15s;
-    pointer-events: none;
-    white-space: nowrap;
 
-}
 .text-box:hover .tooltip{
     opacity: 1;
 }
@@ -124,36 +109,3 @@ nav .fa{
     font-size: 55px;
 }
 
-/* footer*/
-.footer{
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
-    
-
-
-
-}
-.footer h4{
-    margin-bottom: 25px;
-    font-size: 40px;
-}
-.footer p{
-    font-size: 25px;
-}
-.icons .fa-brands{
-    color: #f44336;
-    margin: 0 13px;
-    cursor: pointer;
-    padding: 18px 0;
-    font-size: 50px;
-}
-.fa-ghost{
-    color: #f44336;
-}
-
-.copy{
-    background-color: #777;
-    color: white;
-    padding: 15px;
-}
