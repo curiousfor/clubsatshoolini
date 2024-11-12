@@ -29,26 +29,8 @@ const clubs = [
     { name: 'Art Appreciation Club', type: 'arts', tags: ['gallery', 'critique', 'creativity'] },
     { name: 'Baking Club', type: 'community', tags: ['food', 'recipes', 'cooking'] },
     { name: 'Public Speaking Club', type: 'community', tags: ['speech', 'confidence', 'leadership'] },
-    { name: 'Table Tennis Club', type: 'sports', tags: ['indoor', 'competitive', 'fitness'] },
-    { name: 'Volleyball Club', type: 'sports', tags: ['outdoor', 'team', 'fitness'] },
-    { name: 'Badminton Club', type: 'sports', tags: ['indoor', 'team', 'fitness'] },
-    { name: 'Engineering Club', type: 'tech', tags: ['projects', 'innovation', 'building'] },
-    { name: 'Economics Club', type: 'tech', tags: ['money', 'business', 'finance'] },
-    { name: 'AI & ML Club', type: 'tech', tags: ['AI', 'machine learning', 'data'] },
-    { name: 'Guitar Club', type: 'arts', tags: ['music', 'performance', 'instrument'] },
-    { name: 'Piano Club', type: 'arts', tags: ['music', 'piano', 'performance'] },
-    { name: 'Singing Club', type: 'arts', tags: ['vocals', 'music', 'performance'] },
-    { name: 'Animation Club', type: 'tech', tags: ['art', 'design', 'tech'] },
-    { name: 'Ethics Club', type: 'community', tags: ['debate', 'morality', 'philosophy'] },
-    { name: 'Gardening Club', type: 'community', tags: ['plants', 'outdoor', 'nature'] },
-    { name: 'History Club', type: 'community', tags: ['historical', 'events', 'learning'] },
-    { name: 'Volunteer Club', type: 'community', tags: ['helping', 'activism', 'service'] },
-    { name: 'Networking Club', type: 'tech', tags: ['communication', 'connections', 'tech'] },
-    { name: 'Podcasting Club', type: 'tech', tags: ['audio', 'broadcast', 'media'] },
-    { name: 'Marketing Club', type: 'tech', tags: ['business', 'advertising', 'campaigns'] },
-    { name: '3D Printing Club', type: 'tech', tags: ['innovation', 'printing', 'design'] },
-    { name: 'Culinary Club', type: 'community', tags: ['food', 'cooking', 'recipes'] },
-    { name: 'Graphic Design Club', type: 'tech', tags: ['art', 'design', 'creativity'] }
+
+  
 ];
 
 const clubsList = document.getElementById('clubs-list');

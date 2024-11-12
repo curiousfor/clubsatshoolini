@@ -1,0 +1,119 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #fffefe;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header Section */
+.header {
+    background-image: linear-gradient(rgba(30, 6, 4, 0.7), rgba(54, 24, 24, 0.7)), url(images/shoolini\ campus.jpg);
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Navbar */
+nav {
+    position: absolute;
+    top: 20px;
+    left: 6%;
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+nav img {
+    width: 100px;
+}
+
+/* Navigation Links */
+.nav-links {
+    text-align: right;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    padding: 8px 12px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    transition: width 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+/* Text Box */
+.text-box {
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-box h1 {
+    font-size: 62px;
+    margin-bottom: 10px;
+}
+
+.text-box p {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.hero-btn {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 20px 50px;
+    font-size: 22px;
+    transition: background 1s;
+}
+
+.hero-btn:hover {
+    border-color: #f44336;
+    background: #f44336;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 14px;
+}
