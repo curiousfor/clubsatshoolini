@@ -51,8 +51,10 @@ p {
     margin-bottom: 30px;
 }
 
-.home-back{
+.back-link{
     text-decoration: none; 
+    color: white;
+    font-size: 30px;
     
 }
 
