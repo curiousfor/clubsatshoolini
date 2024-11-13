@@ -51,6 +51,11 @@ p {
     margin-bottom: 30px;
 }
 
+.home-back{
+    text-decoration: none; 
+    
+}
+
 #intro h2 {
     font-size: 1.8rem;
     margin: 20px 0;
