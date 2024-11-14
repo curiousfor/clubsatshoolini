@@ -148,3 +148,12 @@ footer {
     font-size: 0.9rem;
     margin-top: auto;
 }
+
+/* card style */
+.club-card img {
+    width: 100%;
+    height: 180px; /* Adjust as necessary */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 8px 8px 0 0; /* Matches the card’s rounded corners */
+    margin-bottom: 10px;
+}
