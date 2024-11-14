@@ -4,6 +4,7 @@ export const clubs = [
       type: "sports",
       tags: ["outdoor", "team", "active"],
       img: "images/caps.jpg",
+      description: "Shoolini Creative Studio is the performance arts and theatre ensemble of Shoolini University,Himachal Pradesh. Its intention is to build a cultural community ofvisionaries, actors, film makersartists, musicians, dancers, poets,architects and designers in Shoolini University. It organizes mega theatre productions."
       
     },
     {

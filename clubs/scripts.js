@@ -1,9 +1,17 @@
 import { clubs } from "./data.js";
 
-
-
 const clubsList = document.getElementById("clubs-list");
 const searchBar = document.getElementById("search-bar");
+
+// Create and append modal elements
+const modal = document.createElement("div");
+modal.classList.add("modal");
+
+const overlay = document.createElement("div");
+overlay.classList.add("overlay");
+
+document.body.appendChild(modal);
+document.body.appendChild(overlay);
 
 // Function to display clubs
 function displayClubs(filteredClubs) {
@@ -12,53 +20,65 @@ function displayClubs(filteredClubs) {
     const clubCard = document.createElement("div");
     clubCard.classList.add("club-card");
     clubCard.innerHTML = `
-            <img src="${club.img}" alt="${club.name}">
-            <h3>${club.name}</h3>
-            <p>Tags: ${club.tags.join(", ")}</p>
-            <div class="club-type">${club.type}</div>
-        `;
+      <img src="${club.img}" alt="${club.name}">
+      <h3>${club.name}</h3>
+      <p>Tags: ${club.tags.join(", ")}</p>
+      <div class="club-type">${club.type}</div>
+    `;
+
+    // Event listener for opening modal
+    clubCard.addEventListener("click", () => openModal(club));
+
     clubsList.appendChild(clubCard);
   });
 }
 
-// Filter clubs by type
-function filterClubsByType(type) {
-  const filteredClubs =
-    type === "all" ? clubs : clubs.filter((club) => club.type === type);
-  displayClubs(filteredClubs);
-  updateActiveTab(type);
+// Function to open modal with club details
+function openModal(club) {
+  modal.innerHTML = `
+    <img src="${club.img}" alt="${club.name}">
+    <h3>${club.name}</h3>
+    <p>${club.description || "No description available."}</p>
+    <p>Tags: ${club.tags.join(", ")}</p>
+    <button class="close-modal">Back to Clubs</button>
+  `;
+  modal.style.display = "block";
+  overlay.style.display = "block";
+
+  // Add event listener to close button
+  modal.querySelector(".close-modal").addEventListener("click", closeModal);
 }
 
-// Update active tab styling
-function updateActiveTab(selectedType) {
-  document.querySelectorAll(".tab-button").forEach((button) => {
-    button.classList.remove("active");
-    if (button.textContent.toLowerCase() === selectedType) {
-      button.classList.add("active");
-    }
-  });
+// Function to close modal
+function closeModal() {
+  modal.style.display = "none";
+  overlay.style.display = "none";
+}
+
+// Filter clubs by type
+function filterClubsByType(type) {
+  const filteredClubs = type === "all" ? clubs : clubs.filter((club) => club.type === type);
+  displayClubs(filteredClubs);
+  updateActiveTab(type);
 }
 
 // Function to filter clubs based on search input
 function filterClubs() {
   const searchText = searchBar.value.toLowerCase();
-  const activeType = document
-    .querySelector(".tab-button.active")
-    .textContent.toLowerCase();
+  const activeType = document.querySelector(".tab-button.active").textContent.toLowerCase();
 
   const filteredClubs = clubs.filter((club) => {
     const matchesType = activeType === "all" || club.type === activeType;
-    const matchesSearch =
-      club.name.toLowerCase().includes(searchText) ||
-      club.tags.some((tag) => tag.toLowerCase().includes(searchText));
+    const matchesSearch = club.name.toLowerCase().includes(searchText) || club.tags.some((tag) => tag.toLowerCase().includes(searchText));
     return matchesType && matchesSearch;
   });
 
   displayClubs(filteredClubs);
 }
 
-// Event listeners for search and filter
+// Event listeners
 searchBar.addEventListener("input", filterClubs);
+overlay.addEventListener("click", closeModal); // Close modal if overlay is clicked
 
 // Initial display of all clubs
 filterClubsByType("all");
