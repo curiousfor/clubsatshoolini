@@ -3,73 +3,73 @@ export const clubs = [
     name: "Shoolini Creative Studio",
     type: "arts",
     tags: ["theatre", "film", "performance"],
-    president: "Rohit",
-    contact: "919913123987124",
+    president: "Lakshmi Vasundhra",
+    contact: "7075132226",
     img: "images/shoolinicreativestudio.jpeg",
     description: "Shoolini Creative Studio is the performance arts and theatre ensemble of Shoolini University, Himachal Pradesh. It aims to build a cultural community of visionaries, actors, filmmakers, artists, musicians, dancers, poets, architects, and designers. It organizes mega theatre productions."
-},
-{
+  },
+  {
     name: "Raag Rang Club",
     type: "arts",
     tags: ["music", "cultural", "creative"],
-    president: "Aditi",
-    contact: "919875431234",
+    president: "Anushka Bajpai",
+    contact: "6265138028",
     img: "images/raagrang.png",
     description: "Raag Rang Club celebrates the diversity of Indian culture through music, dance, and traditional arts. It provides a platform for students to express themselves creatively."
-},
-{
+  },
+  {
     name: "Satrangi Strokes",
     type: "arts",
     tags: ["painting", "crafts", "design"],
-    president: "Pranav",
-    contact: "919831234567",
+    president: "Aastha Kumari, Siddharth",
+    contact: "9382475899",
     img: "images/satrangistrokes.jpg",
     description: "Satrangi Strokes focuses on the visual arts, allowing students to explore their skills in painting, crafts, and design through workshops and exhibitions."
-},
-{
+  },
+  {
     name: "Saksham Dance Club",
     type: "arts",
     tags: ["dance", "choreography", "expression"],
-    president: "Tanya",
-    contact: "919845612378",
+    president: "Lavanya, Harsh",
+    contact: "9634885707, 8504855602",
     img: "images/sakshamdanceclub.jpg",
     description: "The Saksham Dance Club is dedicated to dance enthusiasts, offering classes and practice sessions in various dance forms and styles."
-},
-{
+  },
+  {
     name: "Cinedicate-The Filmmaking Club",
     type: "arts",
     tags: ["filmmaking", "acting", "storytelling"],
-    president: "Kabir",
-    contact: "919876543210",
+    president: "Shivansh",
+    contact: "7876593535",
     img: "images/filmclub.jpg",
     description: "Cinedicate is for aspiring filmmakers and actors who want to explore the world of cinema and storytelling. It hosts film screenings, discussions, and short film projects."
-},
-{
+  },
+  {
     name: "Himshobla Club",
     type: "community",
     tags: ["outdoors", "environment", "nature"],
-    president: "Aryan",
-    contact: "919876534567",
+    president: "Sahil Mehta",
+    contact: "8580601616",
     img: "images/Himshobla.jpeg",
     description: "Himshobla Club is dedicated to outdoor enthusiasts, organizing treks, nature conservation activities, and environmental awareness programs."
-},
-{
+  },
+  {
     name: "Loudspeakers Club",
     type: "debate",
     tags: ["debate", "public speaking", "intellect"],
-    president: "Sneha",
-    contact: "919843217654",
+    president: "Vartika Sharma",
+    contact: "8000568798",
     img: "images/loudspeakerclub.jpeg",
     description: "The Loudspeakers Club encourages critical thinking and public speaking skills through debates, group discussions, and speech contests."
-},
-{
+  },
+  {
     name: "Prism Club",
     type: "community",
     tags: ["coding", "hackathons", "innovation"],
     president: "Rishi",
     contact: "919827364587",
     img: "images/prism.jpeg",
-    description: "Prism Club is a hub for tech enthusiasts interested in coding, software development, and hackathons, encouraging innovative projects."
+    description: "PRISM (Preservation and Promotion  of Rights, Identity, Gender and  Sexuality through Manoeuvring and  Motivating LGBTQIAP+ Youth)  aspires to create a safe space for and to  educate people about the  LGBTQIAP+ community. The club  aims to provide a comfort zone for  students to freely talk about their  struggles and experiences, and to help them accept and be open about  who they are."
 },
 {
     name: "Genomage Club",
