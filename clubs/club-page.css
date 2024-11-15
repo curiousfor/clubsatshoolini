@@ -169,13 +169,6 @@ footer {
     }
 }
 
-
-
-
-
-
-
-/* New lines of code for cards detials */
 /* Modal styles */
 .modal {
     position: fixed;
@@ -191,6 +184,26 @@ footer {
     border-radius: 8px;
     text-align: center;
     display: none; /* Hidden initially */
+}
+
+/* Scrollable content area within modal */
+.modal-content {
+    max-height: 70vh; /* Limits modal content height */
+    overflow-y: auto; /* Adds vertical scrolling when content overflows */
+    padding-right: 10px; /* Adds padding for scrollbar space */
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
 
 .modal img {
@@ -238,4 +251,3 @@ footer {
 .close-modal:hover {
     background-color: #9a3a3a;
 }
-
