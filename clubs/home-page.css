@@ -14,7 +14,7 @@ html, body {
 
 /* Header Section */
 .header {
-    background-image: linear-gradient(rgba(30, 6, 4, 0.7), rgba(54, 24, 24, 0.7)), url(images/shoolini\ campus.jpg);
+    background-image: linear-gradient(rgba(30, 6, 4, 0.7), rgba(54, 24, 24, 0.7)), url(other-images/shoolini\ campus.jpg);
     min-height: 100vh;
     background-position: center;
     background-size: cover;
