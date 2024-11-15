@@ -64,7 +64,7 @@ export const clubs = [
       name: "Animal Lovers Club",
       type: "sports",
       tags: ["outdoor", "nature", "adventure"],
-      img: "images/animal_lovers_club.jpg",
+      img: "images/animal.jpg",
     },
     {
       name: "YCC Club",
