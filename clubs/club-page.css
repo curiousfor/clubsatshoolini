@@ -7,27 +7,26 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f4ff; /* Light blue background for a clean look */
-    color: #1c3d5a; /* Dark blue for text readability */
+    background-color: #9ba8ab; /* Dark background */
+    color: #333;
     display: flex;
     flex-direction: column;
     height: 100vh;
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Smooth scrolling for better navigation */
 }
 
 /* Header Styles */
 header {
-    background-color: #1e3a5f; /* Navy blue for header */
+    background-color:#11212d;
     color: white;
     padding: 40px 20px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 5px solid #102a43; /* Darker navy blue for detail */
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
@@ -37,13 +36,13 @@ h1 {
 
 .back-link {
     text-decoration: none;
-    color: #d1e6ff; /* Light blue for contrast */
-    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    color: #f2f2f2;
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
 
 .back-link:hover {
-    color: #b0d4f1; /* Slightly lighter blue for hover effect */
+    color: #ddd;
 }
 
 /* Search Bar */
@@ -56,27 +55,26 @@ h1 {
 
 .search-bar {
     padding: 10px;
+    /* margin-top: 0; */
     width: 250px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff; /* White for clean input area */
-    color: #1c3d5a; /* Dark blue for text */
+    border-radius: 0px;
     font-size: 1rem;
 }
 
 .search-button {
-    background-color: #1e3a5f; /* Matches header */
+    background-color: black;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 0px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s;
 }
 
 .search-button:hover {
-    background-color: #3b5998; /* Brighter blue for hover */
-    transform: scale(1.05);
+    color: black;
+    background-color: #ccd0cf;
 }
 
 /* Club Tabs */
@@ -85,16 +83,16 @@ h1 {
     justify-content: center;
     gap: 15px;
     padding: 20px;
-    background-color: #3b5998; /* Mid-tone blue for tabs */
+    background-color: #11212d;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .tab-button {
-    background-color: #1e3a5f; /* Matches buttons */
+    background-color: black;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 0px;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s, transform 0.3s;
@@ -102,12 +100,14 @@ h1 {
 
 .tab-button:hover,
 .tab-button.active {
-    background-color: #102a43; /* Darker blue for active state */
+    background-color: #ccd0cf;
+    color: black;
     transform: scale(1.05);
 }
 
 /* Clubs List */
 .club-container {
+    background-color: #9ba8ab; /* Darker background for the club list */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
@@ -116,25 +116,29 @@ h1 {
     margin: 0 auto;
 }
 
+/* Club Card */
 .club-card {
-    background-color: #ffffff; /* Pure white for contrast */
-    border-radius: 8px;
+    background-color: #4a5c6a; /* Slightly lighter for contrast */
+    border-radius: 0px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sharper shadow */
+    color: #f2f2f2;
     text-align: center;
+    font-family: monospace, monospace;
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: fadeInScale 0.6s ease;
+    animation: fadeInScale 0.5s ease;
 }
 
 .club-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(39, 37, 37, 0.25); /* Stronger hover effect */
 }
 
+/* Club Card Animation */
 @keyframes fadeInScale {
     from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: scale(0.9);
     }
     to {
         opacity: 1;
@@ -142,100 +146,71 @@ h1 {
     }
 }
 
-/* Card Style */
-.club-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: 10px;
-}
-
 /* Footer */
 footer {
-    background-color: #102a43; /* Dark blue for footer */
-    color: #d1e6ff; /* Light blue for text */
+    background-color: #333;
+    color: rgb(46, 44, 44);
     text-align: center;
     padding: 15px;
     font-size: 0.9rem;
     margin-top: auto;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 600px) {
-    #search-container {
-        flex-direction: column;
-        gap: 5px;
+/* Club Card Images */
+.club-card img {
+    width: 100%;
+    height: 180px; /* Adjust as necessary */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    /* border-radius: 8px 8px 0 0; Matches the card’s rounded corners */
+    /* border: white */
+    margin-bottom: 10px;
+}
+
+/* Accessibility Enhancements */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover, a:focus {
+    outline: 2px solid #f44336; /* Clear focus indication */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .search-bar {
+        width: 200px;
+    }
+
+    .tab-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .club-container {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 }
 
+@media (max-width: 480px) {
+    .search-bar {
+        width: 180px;
+    }
 
+    .tab-button {
+        font-size: 0.85rem;
+        padding: 7px 12px;
+    }
 
-
-
-
-
-/* New lines of code for cards detials */
-/* Modal styles */
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    border-radius: 8px;
-    text-align: center;
-    display: none; /* Hidden initially */
+    .club-container {
+        grid-template-columns: 1fr;
+    }
 }
-
-.modal img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.modal h3 {
-    margin-top: 15px;
-    font-size: 2rem;
-    color: #333;
-}
-
-.modal p {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Overlay to blur background */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 900;
-    display: none;
-}
-
-/* Back to Clubs button */
-.close-modal {
-    background-color: #8a2b2b;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background-color 0.3s;
-}
-
-.close-modal:hover {
-    background-color: #9a3a3a;
-}
-
