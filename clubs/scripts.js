@@ -36,15 +36,13 @@ function displayClubs(filteredClubs) {
 // Function to open modal with club details
 function openModal(club) {
   modal.innerHTML = `
-    <div class="modal-content">
-      <img src="${club.img}" alt="${club.name}">
-      <h3>${club.name}</h3>
-      <p>${club.description || "No description available."}</p>
-      <h4>President: ${club.president || "N/A"}</h4>
-      <p>Contact: ${club.contact || "N/A"}</p>
-      <p>Tags: ${club.tags.join(", ")}</p>
-      <button class="close-modal">Back to Clubs</button>
-    </div>
+    <img src="${club.img}" alt="${club.name}">
+    <h3>${club.name}</h3>
+    <p>${club.description || "No description available."}</p>
+    <p>${club.president}</p>
+    <p>${club.contact}</p>
+    <p>Tags: ${club.tags.join(", ")}</p>
+    <button class="close-modal">Back to Clubs</button>
   `;
   modal.style.display = "block";
   overlay.style.display = "block";
