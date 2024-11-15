@@ -7,26 +7,27 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fc;
-    color: #333;
+    background-color: #f0f4ff; /* Light blue background for a clean look */
+    color: #1c3d5a; /* Dark blue for text readability */
     display: flex;
     flex-direction: column;
     height: 100vh;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Header Styles */
 header {
-    background-color: #8a2b2b;
+    background-color: #1e3a5f; /* Navy blue for header */
     color: white;
     padding: 40px 20px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 5px solid #7a2525;
+    border-bottom: 5px solid #102a43; /* Darker navy blue for detail */
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 10px;
 }
 
@@ -36,13 +37,13 @@ h1 {
 
 .back-link {
     text-decoration: none;
-    color: #f2f2f2;
-    font-size: 1.2rem;
+    color: #d1e6ff; /* Light blue for contrast */
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     transition: color 0.3s;
 }
 
 .back-link:hover {
-    color: #ddd;
+    color: #b0d4f1; /* Slightly lighter blue for hover effect */
 }
 
 /* Search Bar */
@@ -58,21 +59,24 @@ h1 {
     width: 250px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    background-color: #fff; /* White for clean input area */
+    color: #1c3d5a; /* Dark blue for text */
     font-size: 1rem;
 }
 
 .search-button {
-    background-color: #8a2b2b;
+    background-color: #1e3a5f; /* Matches header */
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .search-button:hover {
-    background-color: #9a3a3a;
+    background-color: #3b5998; /* Brighter blue for hover */
+    transform: scale(1.05);
 }
 
 /* Club Tabs */
@@ -81,12 +85,12 @@ h1 {
     justify-content: center;
     gap: 15px;
     padding: 20px;
-    background-color: #f1f1f1;
+    background-color: #3b5998; /* Mid-tone blue for tabs */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .tab-button {
-    background-color: #8a2b2b;
+    background-color: #1e3a5f; /* Matches buttons */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -98,7 +102,7 @@ h1 {
 
 .tab-button:hover,
 .tab-button.active {
-    background-color: #9a3a3a;
+    background-color: #102a43; /* Darker blue for active state */
     transform: scale(1.05);
 }
 
@@ -113,13 +117,13 @@ h1 {
 }
 
 .club-card {
-    background-color: white;
+    background-color: #ffffff; /* Pure white for contrast */
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    animation: fadeInScale 0.5s ease;
+    animation: fadeInScale 0.6s ease;
 }
 
 .club-card:hover {
@@ -127,11 +131,10 @@ h1 {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Club Card Animation */
 @keyframes fadeInScale {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.95);
     }
     to {
         opacity: 1;
@@ -139,21 +142,29 @@ h1 {
     }
 }
 
+/* Card Style */
+.club-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+}
+
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #102a43; /* Dark blue for footer */
+    color: #d1e6ff; /* Light blue for text */
     text-align: center;
     padding: 15px;
     font-size: 0.9rem;
     margin-top: auto;
 }
 
-/* card style */
-.club-card img {
-    width: 100%;
-    height: 180px; /* Adjust as necessary */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    border-radius: 8px 8px 0 0; /* Matches the card’s rounded corners */
-    margin-bottom: 10px;
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    #search-container {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
