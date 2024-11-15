@@ -231,7 +231,7 @@ export const clubs = [
       name: "Joypad Symphony",
       type: "community",
       tags: ["food", "recipes", "cooking"],
-      img: "images/joypad_symphony.jpg",
+      img: "images/joypad.jpg",
     },
     {
       name: "IIC (Institution Innovation Council)",
@@ -243,24 +243,24 @@ export const clubs = [
       name: "Deez Knights Chess Club",
       type: "community",
       tags: ["speech", "confidence", "leadership"],
-      img: "images/deez_knights_chess_club.jpg",
+      img: "images/chessclub.jpg",
     },
     {
       name: "Student Research Council Shoolini",
       type: "community",
       tags: ["speech", "confidence", "leadership"],
-      img: "images/student_research_council.jpg",
+      img: "images/src.jpg",
     },
     {
       name: "IEEE Shoolini Student Branch",
       type: "community",
       tags: ["speech", "confidence", "leadership"],
-      img: "images/ieee_shoolini.jpg",
+      img: "images/ieee.jpg",
     },
     {
       name: "ACM Student Chapter",
       type: "community",
       tags: ["speech", "confidence", "leadership"],
-      img: "images/acm_student_chapter.jpg",
+      img: "images/acm.jpg",
     },
   ];
