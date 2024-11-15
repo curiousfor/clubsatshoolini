@@ -210,23 +210,23 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    background-color: white;
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Maximum width */
+    background-color: #fff; /* White background for contrast */
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    border-radius: 8px;
-    text-align: center;
+    border-radius: 10px; /* Rounded corners */
     display: none; /* Hidden initially */
 }
 
 /* Scrollable content area within modal */
 .modal-content {
-    max-height: 70vh; /* Limits modal content height */
-    overflow-y: auto; /* Adds vertical scrolling when content overflows */
-    padding-right: 10px; /* Adds padding for scrollbar space */
+    max-height: 80vh; /* Maximum height for content */
+    overflow-y: auto; /* Enable vertical scrolling */
+    text-align: center; /* Center align text */
 }
+
 
 .modal-content::-webkit-scrollbar {
     width: 8px;
@@ -242,21 +242,20 @@ footer {
 }
 
 .modal img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Fixed height for uniformity */
+    border-radius: 10px; /* Rounded corners for images */
 }
 
 .modal h3 {
-    margin-top: 15px;
-    font-size: 2rem;
-    color: #333;
+    margin-top: 15px; /* Space above title */
+    font-size: 1.8rem; /* Larger font size */
 }
 
+
 .modal p {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #666;
+    margin-top: 10px; /* Space above paragraph */
 }
 
 /* Overlay to blur background */
@@ -266,24 +265,24 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay with transparency */
     z-index: 900;
-    display: none;
+    display: none; /* Hidden initially */
 }
 
 /* Back to Clubs button */
 .close-modal {
-    background-color: #8a2b2b;
+    background-color: #8a2b2b; /* Button color */
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 15px; /* Space above button */
     transition: background-color 0.3s;
 }
 
 .close-modal:hover {
-    background-color: #9a3a3a;
+    background-color: #9a3a3a; /* Darker shade on hover */
 }
 
