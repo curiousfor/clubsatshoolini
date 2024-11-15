@@ -39,6 +39,8 @@ function openModal(club) {
     <img src="${club.img}" alt="${club.name}">
     <h3>${club.name}</h3>
     <p>${club.description || "No description available."}</p>
+    <p>${club.president}</p>
+    <p>${club.contact}</p>
     <p>Tags: ${club.tags.join(", ")}</p>
     <button class="close-modal">Back to Clubs</button>
   `;
