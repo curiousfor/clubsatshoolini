@@ -61,10 +61,34 @@ function closeModal() {
 
 // Filter clubs by type
 function filterClubsByType(type) {
-  const filteredClubs = type === "all" ? clubs : clubs.filter((club) => club.type === type);
+  console.log(`Filtering clubs by type: ${type}`); // Debugging line
+  const filteredClubs = type === "all" 
+      ? clubs 
+      : clubs.filter((club) => club.type.toLowerCase() === type.toLowerCase());
+
+  console.log(`Filtered Clubs:`, filteredClubs); // Debugging line
   displayClubs(filteredClubs);
   updateActiveTab(type);
 }
+
+// Function to update active tab styling
+function updateActiveTab(activeType) {
+  const tabButtons = document.querySelectorAll(".tab-button");
+  tabButtons.forEach((button) => {
+      if (button.textContent.toLowerCase() === activeType) {
+          button.classList.add("active");
+      } else {
+          button.classList.remove("active");
+      }
+  });
+}
+// Event listeners for tab buttons
+document.querySelectorAll(".tab-button").forEach(button => {
+  button.addEventListener("click", () => {
+      const type = button.textContent.toLowerCase();
+      filterClubsByType(type);
+  });
+});
 
 // Function to filter clubs based on search input
 function filterClubs() {
@@ -86,3 +110,5 @@ overlay.addEventListener("click", closeModal); // Close modal if overlay is clic
 
 // Initial display of all clubs
 filterClubsByType("all");
+
+

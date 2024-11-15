@@ -64,7 +64,7 @@ export const clubs = [
 },
 {
     name: "Prism Club",
-    type: "tech",
+    type: "community",
     tags: ["coding", "hackathons", "innovation"],
     president: "Rishi",
     contact: "919827364587",
@@ -118,7 +118,7 @@ export const clubs = [
 },
 {
     name: "The Red Taboos Club",
-    type: "gaming",
+    type: "art",
     tags: ["video games", "competitive", "eSports"],
     president: "Aayush",
     contact: "919876321456",
@@ -181,13 +181,13 @@ export const clubs = [
 },
     {
       name: "Shakerz Skaterz",
-      type: "community",
+      type: "sports",
       tags: ["films", "reviews", "cinema"],
       img: "images/skaters.jpg",
     },
     {
       name: "Antarmada",
-      type: "sports",
+      type: "science",
       tags: ["water", "fitness", "team"],
       img: "images/antarmadaclub.jpg",
     },
@@ -205,25 +205,25 @@ export const clubs = [
     },
     {
       name: "Katha",
-      type: "tech",
+      type: "story",
       tags: ["numbers", "problem-solving", "science"],
       img: "images/kathaclub.jpg",
     },
     {
       name: "Mountain Rangers",
-      type: "community",
+      type: "sports",
       tags: ["reading", "discussion", "literature"],
       img: "images/mountainranger.png",
     },
     {
       name: "Pedals Cycling Club",
-      type: "tech",
+      type: "sports",
       tags: ["experiments", "research", "discovery"],
       img: "images/cyclingclub.jpg",
     },
     {
       name: "Ounce Motorsports",
-      type: "arts",
+      type: "sports",
       tags: ["gallery", "critique", "creativity"],
       img: "images/motorsports.jpg",
     },
