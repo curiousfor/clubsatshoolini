@@ -292,16 +292,7 @@ footer {
     margin-right: 5px; /* Space between tags */
 }
 
-/* Footer Styles */
-.modal-footer {
-    margin-top: 20px; /* Space above footer */
-    padding-top: 10px; /* Padding at the top of footer */
-    border-top: 1px solid #ccc; /* Top border for separation */
-}
 
-.modal-footer p {
-    font-style: italic; /* Italicize note text */
-}
 
 /* Overlay Styles */
 .overlay {

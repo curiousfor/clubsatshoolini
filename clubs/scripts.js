@@ -51,9 +51,6 @@ function openModal(club) {
             <div class="tags">
                 <strong>Tags:</strong> ${club.tags.map(tag => `<span class="tag">${tag}</span>`).join(", ")}
             </div>
-                 <footer class="modal-footer">
-                <p>If you would like to know more, feel free to contact the president!</p>
-            </footer>
             <button  class="join-club">join</button>
         </div>
   `;
