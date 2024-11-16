@@ -54,14 +54,14 @@ function openModal(club) {
                  <footer class="modal-footer">
                 <p>If you would like to know more, feel free to contact the president!</p>
             </footer>
-            <button class="close-modal">Close</button>
+            <button class="join-club">join</button>
         </div>
   `;
   modal.style.display = "block";
   overlay.style.display = "block";
 
   // Add event listener to close button
-  modal.querySelector(".close-modal").addEventListener("click", closeModal);
+  //modal.querySelector(".close-modal").addEventListener("click", closeModal);
 }
 
 // Function to close modal

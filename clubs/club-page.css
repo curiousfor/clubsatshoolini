@@ -299,8 +299,8 @@ footer {
 }
 
 /* Back to Clubs button */
-.close-modal {
-    background-color: #8a2b2b; /* Button color */
+.join-club {
+    background-color: #1b3e76; /* Button color */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -308,6 +308,7 @@ footer {
     cursor: pointer;
     margin-top: 15px; /* Space above button */
     transition: background-color 0.3s;
+    
 }
 
 .close-modal:hover {
