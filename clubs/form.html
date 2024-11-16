@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joing Form</title>
+    <style>
+        
+body {
+            font-family: Arial, sans-serif;
+            background-color: #9ba8ab;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #ccd0cf;
+            border: 1px solid #d9e4f1;
+            border-radius: 0px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-container h2 {
+            color: #000000;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 0px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0d47a1;
+            color: #ffffff;
+            border: none;
+            border-radius: 0px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #094f97;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2><b>JOIN THE CLUB</b></h2>
+        <form action="submit_form.php" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" placeholder="Enter your course" required>
+
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester" required>
+                <option value="" disabled selected>Select your semester</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <button type="submit">Join Now</button>
+        </form>
+    </div>
+</body>
+</html>
