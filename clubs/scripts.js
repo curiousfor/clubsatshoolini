@@ -58,8 +58,8 @@ function openModal(club) {
   overlay.style.display = "block";
 
   // Add event listener to close button
-  modal.querySelector(".join-club").addEventListener("click", function(){
-    window.location.href = "form.html";
+  modal.querySelector(".join-club").addEventListener("click", function() {
+    window.location.href = "http://localhost:1000"; // Add full URL
   });
 }
 
