@@ -50,7 +50,7 @@ Ensure you have the following installed on your system:
 
 3. **Set Up the Backend**  
    - Open the `server.js` file.  
-   - Replace the default password in line **25** with your MySQL password.  
+   - Replace the default password in line **28** with your MySQL password.  
    - Start the server:  
      ```bash
      node server.js
@@ -111,7 +111,7 @@ Ensure you have the following installed on your system:
 
 3. **Set Up the Backend**  
    - Open the `server.js` file.  
-   - Replace the default password in line **25** with your MySQL password.  
+   - Replace the default password in line **28** with your MySQL password.  
    - Start the server:  
      ```bash
      node server.js
