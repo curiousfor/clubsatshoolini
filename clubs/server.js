@@ -25,7 +25,7 @@ async function connectToDatabase() {
     const pool = mysql.createPool({
       host: "localhost",
       user: "root",
-      password: "Rmpsssk1234@$", // Replace with your actual password
+      password: "mysql9199", // Replace with your actual password
       database: "user_data",
     });
 
