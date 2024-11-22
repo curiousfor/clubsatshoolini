@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const mysql = require("mysql2/promise");
 const path = require("path");
+const session = require('express-session');
 
 const app = express();
 const port = 1000;
@@ -10,30 +11,31 @@ const port = 1000;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors()); 
-
-
-app.use(express.json()); // Parse JSON bodies
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies (for form submissions)
-
-// Serve static files from the 'public' directory
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Connect to MySQL Database
+app.use(session({
+  secret: 'secret-key', // Use a more secure key in production
+  resave: false,
+  saveUninitialized: true
+}));
+
 async function connectToDatabase() {
   try {
     const pool = mysql.createPool({
       host: "localhost",
       user: "root",
-      password: "mysql9199", // Replace with your actual password
-      database: "user_data",
+      password: "mysql9199",
+      database: "club_management",
     });
 
     console.log("Connected to MySQL database");
-    global.pool = pool; // Make the pool globally accessible
+    global.pool = pool;
   } catch (error) {
     console.error("Error connecting to database:", error);
-    process.exit(1); // Exit the application if the database connection fails
+    process.exit(1);
   }
 }
 
@@ -41,28 +43,15 @@ connectToDatabase();
 
 // Handle form submission
 app.post("/process_registration", async (req, res) => {
-  const { name, course, semester, mobileNumber, email, Club} = req.body;
+  const { name, course, semester, mobileNumber, email, Club } = req.body;
 
   try {
-    // Get a database connection from the pool
     const connection = await global.pool.getConnection();
-
-    // Insert data into the database
-    const query =
-      "INSERT INTO Students (Name, Course, Semester, MobileNumber, Email, Club) VALUES (?, ?, ?, ?, ?, ?)";
-    const [results] = await connection.query(query, [
-      name,
-      course,
-      parseInt(semester, 10), // Ensure semester is an integer
-      mobileNumber,
-      email,
-      Club,
-    ]);
+    const query = "INSERT INTO users (name, email, role, club_id, password) VALUES (?, ?, 'student', (SELECT club_id FROM clubs WHERE club_name = ?), 'password')";
+    const [results] = await connection.query(query, [name, email, Club, 'password']); // Adjust to hash password in real implementation
 
     console.log("Data inserted successfully:", results);
     res.status(200).send("Registration successful!");
-
-    // Release the connection back to the pool
     connection.release();
   } catch (error) {
     console.error("Error inserting data:", error);
@@ -74,7 +63,53 @@ app.post("/process_registration", async (req, res) => {
   }
 });
 
-// Start the server
+// Login endpoint for authentication
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const connection = await global.pool.getConnection();
+    const query = 'SELECT * FROM users WHERE email = ? AND password = ?';
+    const [results] = await connection.query(query, [email, password]); // Adjust to hash and compare hashed password
+
+    if (results.length > 0) {
+      req.session.role = results[0].role;
+      req.session.club_id = results[0].club_id;
+      res.status(200).send("Login successful");
+    } else {
+      res.status(401).send("Invalid email or password");
+    }
+    connection.release();
+  } catch (error) {
+    console.error("Error during login:", error);
+    res.status(500).send("Error during login");
+  }
+});
+
+// Endpoint to get members of a club
+app.get('/club-members', async (req, res) => {
+  if (req.session.role === 'president') {
+    const clubId = req.session.club_id;
+    try {
+      const connection = await global.pool.getConnection();
+      const query = 'SELECT * FROM users WHERE club_id = ? AND role = "student"';
+      const [results] = await connection.query(query, [clubId]);
+
+      res.json(results);
+      connection.release();
+    } catch (error) {
+      console.error("Error fetching club members:", error);
+      res.status(500).send("Error fetching club members.");
+    }
+  } else {
+    res.status(403).send('Forbidden');
+  }
+});
+
+// Serve admin page
+app.get('/admin-page.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin-page.html'));
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
