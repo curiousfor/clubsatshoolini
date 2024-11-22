@@ -4,6 +4,7 @@ const cors = require('cors');
 const mysql = require("mysql2/promise");
 const path = require("path");
 const session = require('express-session');
+const adminRoutes = require('./admin-server');
 
 const app = express();
 const port = 1000;
@@ -47,8 +48,8 @@ app.post("/process_registration", async (req, res) => {
 
   try {
     const connection = await global.pool.getConnection();
-    const query = "INSERT INTO users (name, email, role, club_id, password) VALUES (?, ?, 'student', (SELECT club_id FROM clubs WHERE club_name = ?), 'password')";
-    const [results] = await connection.query(query, [name, email, Club, 'password']); // Adjust to hash password in real implementation
+    const query = "INSERT INTO users (name, email, course, semester, mobile_number, role, club_id, password) VALUES (?, ?, ?, ?, ?, 'student', (SELECT club_id FROM clubs WHERE club_name = ?), 'defaultPassword')";
+    const [results] = await connection.query(query, [name, email, course, semester, mobileNumber, Club]);
 
     console.log("Data inserted successfully:", results);
     res.status(200).send("Registration successful!");
@@ -63,47 +64,8 @@ app.post("/process_registration", async (req, res) => {
   }
 });
 
-// Login endpoint for authentication
-app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    const connection = await global.pool.getConnection();
-    const query = 'SELECT * FROM users WHERE email = ? AND password = ?';
-    const [results] = await connection.query(query, [email, password]); // Adjust to hash and compare hashed password
-
-    if (results.length > 0) {
-      req.session.role = results[0].role;
-      req.session.club_id = results[0].club_id;
-      res.status(200).send("Login successful");
-    } else {
-      res.status(401).send("Invalid email or password");
-    }
-    connection.release();
-  } catch (error) {
-    console.error("Error during login:", error);
-    res.status(500).send("Error during login");
-  }
-});
-
-// Endpoint to get members of a club
-app.get('/club-members', async (req, res) => {
-  if (req.session.role === 'president') {
-    const clubId = req.session.club_id;
-    try {
-      const connection = await global.pool.getConnection();
-      const query = 'SELECT * FROM users WHERE club_id = ? AND role = "student"';
-      const [results] = await connection.query(query, [clubId]);
-
-      res.json(results);
-      connection.release();
-    } catch (error) {
-      console.error("Error fetching club members:", error);
-      res.status(500).send("Error fetching club members.");
-    }
-  } else {
-    res.status(403).send('Forbidden');
-  }
-});
+// Use the admin routes
+app.use(adminRoutes);  // Attach the admin routes to the app
 
 // Serve admin page
 app.get('/admin-page.html', (req, res) => {
