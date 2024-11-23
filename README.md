@@ -1,5 +1,9 @@
-# University Club Management System 
-# Now everyone focus and try to contribute on design the website
+
+# University Club Management System  
+
+Now everyone focus and try to contribute to designing the website!
+
+---
 
 ## Features  
 - Explore available clubs with details.  
@@ -143,6 +147,22 @@ Ensure you have the following installed on your system:
      );
      SHOW DATABASES;
      ```  
+
+---
+
+## Database Schema - Presidents Table  
+
+The `presidents` table schema is as follows:
+
+```sql
+CREATE TABLE Presidents (
+    PresidentID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(50) DEFAULT NULL,
+    Email VARCHAR(50) NOT NULL UNIQUE,
+    Password VARCHAR(255) NOT NULL,
+    Club VARCHAR(50) NOT NULL
+);
+```
 
 ---
 
