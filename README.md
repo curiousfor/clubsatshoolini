@@ -1,4 +1,5 @@
 # University Club Management System 
+# Now everyone focus and try to contribute on design the website
 
 ## Features  
 - Explore available clubs with details.  
