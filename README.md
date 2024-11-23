@@ -1,6 +1,4 @@
-# University Club Management System  
-
-The **University Club Management System** is a web application that enables students of **Shoolini University** to explore, join, and manage university clubs efficiently.  
+# University Club Management System 
 
 ## Features  
 - Explore available clubs with details.  
