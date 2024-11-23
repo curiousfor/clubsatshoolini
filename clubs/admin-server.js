@@ -1,53 +1,62 @@
-// In your server.js file (Backend)
 const express = require('express');
-const router = express.Router();
+const mysql = require('mysql2');
+const app = express();
+const port = 3000;
 
-// Admin login endpoint
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const connection = await global.pool.getConnection();
-    const query = 'SELECT * FROM users WHERE email = ? AND password = ? AND role = "president"';
-    const [results] = await connection.query(query, [email, password]);
-
-    if (results.length > 0) {
-      req.session.role = results[0].role;
-      req.session.club_id = results[0].club_id;
-      console.log('Session set:', req.session); // Debugging line
-      res.status(200).send("Login successful");
-    } else {
-      res.status(401).send("Invalid email or password");
-    }
-    connection.release();
-  } catch (error) {
-    console.error("Error during login:", error);
-    res.status(500).send("Error during login");
-  }
+// Database connection
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'mysql9199',
+    database: 'user_data'
 });
 
-
-
-
-// Endpoint to get members of a club
-router.get('/club-members', async (req, res) => {
-  console.log('Session data:', req.session); // Debugging line
-  if (req.session.role === 'president') {
-    const clubId = req.session.club_id;
-    try {
-      const connection = await global.pool.getConnection();
-      const query = 'SELECT * FROM users WHERE club_id = ? AND role = "student"';
-      const [results] = await connection.query(query, [clubId]);
-
-      res.json(results);
-      connection.release();
-    } catch (error) {
-      console.error("Error fetching club members:", error);
-      res.status(500).send("Error fetching club members.");
+db.connect((err) => {
+    if (err) {
+        console.error('Error connecting to MySQL:', err.message);
+        return;
     }
-  } else {
-    res.status(403).send('Forbidden');
-  }
+    console.log('Connected to MySQL');
 });
 
-module.exports = router;
+// Serve the HTML file directly
+app.use(express.static(__dirname));
+
+// Root route to serve a default message or redirect
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/admin-page.html');
+});
+
+// Route to get club members for a specific president (protected route)
+app.get('/club-members', (req, res) => {
+    const { email, password } = req.query;
+
+    const queryPresident = 'SELECT * FROM presidents WHERE Email = ? AND Password = ?';
+    db.query(queryPresident, [email, password], (err, presidentResults) => {
+        if (err) {
+            console.error('Error fetching president:', err.message);
+            res.status(500).send('Error fetching president');
+            return;
+        }
+
+        if (presidentResults.length === 0) {
+            res.status(403).send('Unauthorized: Invalid email or password');
+            return;
+        }
+
+        const club = presidentResults[0].Club;
+        const queryMembers = 'SELECT * FROM students WHERE Club = ?';
+        db.query(queryMembers, [club], (err, memberResults) => {
+            if (err) {
+                console.error('Error fetching club members:', err.message);
+                res.status(500).send('Error fetching club members');
+                return;
+            }
+            res.json(memberResults);
+        });
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+});

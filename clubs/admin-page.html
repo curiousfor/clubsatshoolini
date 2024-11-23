@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page - Club Members</title>
-    <link rel="stylesheet" href="admin.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club President Login</title>
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-    <header>
-        <h1>Admin Login</h1>
-        <nav class="home-back">
-            <a href="home-page.html" class="home-button">Home</a>
-        </nav>
-    </header>
 
-    <section id="login-section">
-        <form id="loginForm">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-        <div id="login-error" style="color: red;"></div>
-    </section>
+  <div class="container">
+    <h1>Club President Login</h1>
 
-    <section id="club-members-section" style="display: none;">
-        <h2>Club Members</h2>
-        <div id="club-members-container"></div>
-    </section>
+    <!-- Login Form -->
+    <div class="form-container">
+      <input type="email" id="email" placeholder="Enter email" />
+      <input type="password" id="password" placeholder="Enter password" />
+      <button id="loginBtn">Login</button>
+    </div>
 
-  
-<script src="admin-script.js"></script>
+    <div id="membersData"></div>
+  </div>
+
+  <script>
+    document.getElementById('loginBtn').addEventListener('click', async () => {
+      // Fetch the email and password from the input fields
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Call the endpoint with query parameters
+      try {
+          const response = await fetch(`/club-members?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`);
+
+          if (response.ok) {
+              const members = await response.json();
+              displayMembers(members);
+          } else {
+              alert('Invalid email or password');
+          }
+      } catch (error) {
+          console.error('Error fetching members:', error);
+          alert('An error occurred while fetching club members.');
+      }
+    });
+
+    // Function to display the members on the page
+    function displayMembers(members) {
+        const output = document.getElementById('membersData');
+        output.innerHTML = '';
+
+        if (members.length === 0) {
+            output.innerHTML = '<p>No members found for this club.</p>';
+            return;
+        }
+
+        members.forEach(member => {
+            const memberDiv = document.createElement('div');
+            memberDiv.className = 'member-card';
+
+            memberDiv.innerHTML = `
+                <p><strong>Name:</strong> ${member.Name}</p>
+                <p><strong>Course:</strong> ${member.Course}</p>
+                <p><strong>Semester:</strong> ${member.Semester}</p>
+                <p><strong>Mobile:</strong> ${member.MobileNumber}</p>
+                <p><strong>Email:</strong> ${member.Email}</p>
+                <p><strong>Club:</strong> ${member.Club}</p>
+                <hr>
+            `;
+
+            output.appendChild(memberDiv);
+        });
+    }
+  </script>
 
 </body>
 </html>

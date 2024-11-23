@@ -4,7 +4,6 @@ const cors = require('cors');
 const mysql = require("mysql2/promise");
 const path = require("path");
 const session = require('express-session');
-const adminRoutes = require('./admin-server');
 
 const app = express();
 const port = 1000;
@@ -23,17 +22,18 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// Connect to MySQL Database
 async function connectToDatabase() {
   try {
     const pool = mysql.createPool({
       host: "localhost",
       user: "root",
       password: "mysql9199",
-      database: "club_management",
+      database: "user_data",
     });
 
     console.log("Connected to MySQL database");
-    global.pool = pool;
+    global.pool = pool; // Make the pool accessible globally
   } catch (error) {
     console.error("Error connecting to database:", error);
     process.exit(1);
@@ -42,13 +42,15 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-// Handle form submission
+// Handle form submission for student registration
 app.post("/process_registration", async (req, res) => {
   const { name, course, semester, mobileNumber, email, Club } = req.body;
 
   try {
     const connection = await global.pool.getConnection();
-    const query = "INSERT INTO users (name, email, course, semester, mobile_number, role, club_id, password) VALUES (?, ?, ?, ?, ?, 'student', (SELECT club_id FROM clubs WHERE club_name = ?), 'defaultPassword')";
+
+    // Insert into the 'students' table
+    const query = "INSERT INTO students (Name, Email, Course, Semester, MobileNumber, Club) VALUES (?, ?, ?, ?, ?, ?)";
     const [results] = await connection.query(query, [name, email, course, semester, mobileNumber, Club]);
 
     console.log("Data inserted successfully:", results);
@@ -64,13 +66,12 @@ app.post("/process_registration", async (req, res) => {
   }
 });
 
-// Use the admin routes
-app.use(adminRoutes);  // Attach the admin routes to the app
-
-// Serve admin page
+// Serve admin page (from the 'public' folder)
 app.get('/admin-page.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin-page.html'));
 });
+
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
