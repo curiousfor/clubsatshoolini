@@ -170,11 +170,11 @@ CREATE TABLE Presidents (
 - **Backend and Frontend Ports:** Ensure the frontend and backend run on different ports to avoid conflicts.  
 - **MySQL Password:** Always update the MySQL password in `server.js` before starting the backend server.
 - After cloning the repo go to the
-  '''bash
+  ```bash
   /clubsatshoolini/clubs/
-  '''
+  ```
   and type the following 
-'''bash
+ ```bash
 sudo rm -rf node_modules
 sudo npm install
   ```
