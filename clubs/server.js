@@ -16,6 +16,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(express.static(path.join(__dirname))); 
+
+
 app.use(session({
   secret: 'secret-key', // Use a more secure key in production
   resave: false,
@@ -54,7 +57,8 @@ app.post("/process_registration", async (req, res) => {
     const [results] = await connection.query(query, [name, email, course, semester, mobileNumber, Club]);
 
     console.log("Data inserted successfully:", results);
-    res.status(200).send("Registration successful!");
+        // Redirect to success page
+        res.redirect('/registration-success.html'); // Redirect to the new success page
     connection.release();
   } catch (error) {
     console.error("Error inserting data:", error);
