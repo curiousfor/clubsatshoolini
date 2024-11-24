@@ -1,116 +1,131 @@
 /* Global styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  color: #ecf0f1;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  background-color: #34495e;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #ecf0f1;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+
+
+/* Form container */
+.form-container {
+  background-color: #2c3e50;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #7f8c8d;
+  border-radius: 4px;
+  background-color: #1e2a33;
+  color: #ecf0f1;
+  font-size: 1rem;
+}
+
+.form-container input:focus {
+  outline: none;
+  border-color: #2980b9;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+  background-color: #3498db;
+}
+
+.form-container button i {
+  margin-right: 8px;
+}
+
+/* Member cards */
+#membersData {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.member-card {
+  background-color: #1e2a33;
+  padding: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #7f8c8d;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.member-card p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #ecf0f1;
+}
+
+.member-card i {
+  margin-right: 10px;
+  color: #2980b9;
+}
+
+.member-card strong {
+  color: #ecf0f1;
+}
+
+.member-card hr {
+  margin-top: 15px;
+  border: 0;
+  border-top: 1px solid #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
   .container {
-    width: 100%;
-    max-width: 480px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 30px;
-  }
-  
-  /* Form container */
-  .form-container {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .form-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  .form-container input:focus {
-    outline: none;
-    border-color: #4e73df;
-  }
-  
-  .form-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4e73df;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .form-container button:hover {
-    background-color: #2e59d9;
-  }
-  
-  /* Member cards */
-  #membersData {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .member-card {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    width: 100%;
-    max-width: 400px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .member-card p {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .member-card strong {
-    color: #4e73df;
-  }
-  
-  .member-card hr {
-    margin-top: 10px;
-    border: 0;
-    border-top: 1px solid #f4f4f4;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .container {
       width: 90%;
       padding: 15px;
-    }
-  
-    .member-card {
-      width: 90%;
-    }
   }
-  
+
+  .member-card {
+      width: 90%;
+  }
+}

@@ -121,4 +121,3 @@ overlay.addEventListener("click", closeModal); // Close modal if overlay is clic
 
 // Initial display of all clubs
 filterClubsByType("all");
-
