@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Changed to a more modern font */
+    background-image: url('other-images/shoolini\ campus.jpg'); /* Ensure the correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Text color for contrast */
+    position: relative; /* Allow positioning of pseudo-element */
+  }
+  
+  body::before {
+    content: ''; /* Required for pseudo-elements */
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: 0; /* Place it behind the content */
+  }
+  
+  .about-us, .team, .contact-us {
+    position: relative; /* Position relative to allow absolute positioning of the overlay */
+    z-index: 1; /* Ensure sections are above the overlay */
+  }
+  
+  .about-us {
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px; /* Add margin to separate sections */
+  }
+  
+  .about-us h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ff4500;
+  }
+  
+  .about-us p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .team {
+    padding: 50px;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px; /* Add margin to separate sections */
+  }
+  
+  .team h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff4500; /* Highlighted color for the heading */
+  }
+  
+  .team-container {
+    max-width: 600px; /* Adjusted width for better alignment */
+    padding-left: 20px; /* Reduced padding from the left edge */
+  }
+  
+  .team-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .team-container li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Keep text white for readability */
+    border-left: 3px solid #00bfff; /* Blue bar on the left for styling */
+    padding-left: 10px; /* Add spacing between the bar and text */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .team-container li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+  }
+  
+  .contact-us {
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px; /* Add margin to separate sections */
+  }
+  
+  .contact-us p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact-us a {
+    color: #00bfff; /* Change link color for visibility */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make link bold */
+  }
+  
+  .contact-us a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
