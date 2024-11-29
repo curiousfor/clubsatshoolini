@@ -73,7 +73,7 @@ export const clubs = [
 },
 {
     name: "Genomage Club",
-    type: "science",
+    type: "acedemics",
     tags: ["biomedical ", "biotechnology", "biosciences"],
     president: "Rishabh Ankur,Harshit Sachan",
     contact: "7004557194,9643446701",
@@ -82,7 +82,7 @@ export const clubs = [
 },
 {
     name: "BODH QUIZ CLUB",
-    type: "knowledge",
+    type: "acedemics",
     tags: ["quiz", "trivia", "brainteaser"],
     president: "Divyanshi Sehgal ",
     contact: "7302640740",
@@ -109,7 +109,7 @@ export const clubs = [
 },
 {
     name: "Lit Witz Club",
-    type: "literature",
+    type: "acedemics",
     tags: ["reading", "writing", "poetry"],
     president: "Ayeshi Mazumdar",
     contact: "7003496521",
@@ -145,7 +145,7 @@ export const clubs = [
 },
 {
     name: "Sanchay:Maths Club",
-    type: "academics",
+    type: "acedemics",
     tags: ["mathematics", "logic", "problem-solving"],
     president: "Anshika Jain",
     contact: "9818322264",
@@ -190,7 +190,7 @@ export const clubs = [
     },
     {
       name: "Antarmada",
-      type: "science",
+      type: "acedemics",
       tags: ["astrology", "cosmic", "space"],
       president:"Aayush",
       contact:"9977352226",
@@ -244,7 +244,7 @@ export const clubs = [
     },
     {
       name: "Ounce Motorsports",
-      type: "automobile",
+      type: "sports",
       tags: ["formula one", "innovation", "vehicle"],
       president:"Divyansh Bhardwaj",
       contact:"8219698471",
