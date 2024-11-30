@@ -1,0 +1,121 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Contact Header */
+  .contact-header {
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .contact-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/circles.png');
+   /* Subtle pattern overlay */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  /* Contact Form Header */
+  .contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Input Containers */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #555;
+  }
+  
+  /* Styling the Input Fields */
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container input, .input-container textarea {
+    width: 100%;
+    padding: 10px 40px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .input-container textarea {
+    resize: vertical;
+  }
+  
+  .input-container i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #007bff;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer */
+  .contact-footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-footer .social-links a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .contact-footer .social-links a:hover {
+    text-decoration: underline;
+  }

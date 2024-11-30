@@ -64,6 +64,18 @@
         return;
       }
 
+      // Display club name and total members
+      const clubName = members[0].Club;
+      const totalMembers = members.length;
+      const clubInfoDiv = document.createElement('div');
+      clubInfoDiv.innerHTML = `
+        <h2><i class="fas fa-users"></i> Club: ${clubName}</h2>
+        <p><strong>Total Members:</strong> ${totalMembers}</p>
+        <hr>
+      `;
+      output.appendChild(clubInfoDiv);
+
+      // Display individual member cards
       members.forEach(member => {
         const memberDiv = document.createElement('div');
         memberDiv.className = 'member-card';
@@ -73,7 +85,6 @@
           <p><i class="fas fa-calendar-alt"></i> <strong>Semester:</strong> ${member.Semester}</p>
           <p><i class="fas fa-phone-alt"></i> <strong>Mobile:</strong> ${member.MobileNumber}</p>
           <p><i class="fas fa-envelope"></i> <strong>Email:</strong> ${member.Email}</p>
-          <p><i class="fas fa-users"></i> <strong>Club:</strong> ${member.Club}</p>
           <hr>
         `;
         output.appendChild(memberDiv);
