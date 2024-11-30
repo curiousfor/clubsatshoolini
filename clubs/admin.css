@@ -96,7 +96,7 @@ body {
 .home-btn {
   position: fixed;
   top: 20px;
-  left: 20px;
+  right: 20px; /* Move the home button to the right */
   background-color: #2980b9;
   color: white;
   border: none;
@@ -110,19 +110,38 @@ body {
   background-color: #3498db;
 }
 
-#membersData {
-  margin-top: 30px;
-  max-width: 800px;
-  text-align: left;
+/* Club info section */
+.club-info {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
+.club-info h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.club-info p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for member cards */
+.members-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin-top: 30px;
+}
+
+/* Member card styling */
 .member-card {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
-  margin-bottom: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  max-width: 100%;
+  text-align: center;
 }
 
 .member-card p {
