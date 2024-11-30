@@ -68,6 +68,7 @@
       const clubName = members[0].Club;
       const totalMembers = members.length;
       const clubInfoDiv = document.createElement('div');
+      clubInfoDiv.className = 'club-info'; // Added class for styling
       clubInfoDiv.innerHTML = `
         <h2><i class="fas fa-users"></i> Club: ${clubName}</h2>
         <p><strong>Total Members:</strong> ${totalMembers}</p>
@@ -75,7 +76,10 @@
       `;
       output.appendChild(clubInfoDiv);
 
-      // Display individual member cards
+      // Display individual member cards below the club info
+      const membersDiv = document.createElement('div');
+      membersDiv.className = 'members-list'; // Added class for styling
+
       members.forEach(member => {
         const memberDiv = document.createElement('div');
         memberDiv.className = 'member-card';
@@ -87,8 +91,11 @@
           <p><i class="fas fa-envelope"></i> <strong>Email:</strong> ${member.Email}</p>
           <hr>
         `;
-        output.appendChild(memberDiv);
+        membersDiv.appendChild(memberDiv);
       });
+
+      // Append members list below the club info
+      output.appendChild(membersDiv);
     }
   </script>
 
