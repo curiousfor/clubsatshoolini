@@ -96,7 +96,7 @@ body {
 .home-btn {
   position: fixed;
   top: 20px;
-  left: 20px;
+  right: 20px; /* Move the home button to the right */
   background-color: #2980b9;
   color: white;
   border: none;

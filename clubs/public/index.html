@@ -5,102 +5,109 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Student Registration</title>
         <style>
-            /* General Reset */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+         /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            body {
-                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-                background: linear-gradient(135deg, #558bdc, #6db2f3);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                color: #333;
-            }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1c1c1c, #333);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f0f0f0;
+}
 
-            .container {
-                background-color: #fff;
-                padding: 25px;
-                border-radius: 15px;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-                width: 100%;
-                max-width: 450px;
-                text-align: center;
-            }
+.container {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
 
-            h1 {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-                color: #007bff;
-            }
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00b4d8;
+    letter-spacing: 1px;
+    padding-top: 30px;
+}
 
-            form {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-            label {
-                font-weight: bold;
-                text-align: left;
-                font-size: 0.9rem;
-            }
+label {
+    font-weight: 600;
+    text-align: left;
+    font-size: 1rem;
+    color: #ddd;
+}
 
-            input,
-            select,
-            button {
-                font-size: 1rem;
-                padding: 10px;
-                border-radius: 8px;
-                border: 1px solid #ddd;
-                transition: all 0.3s;
-            }
+input,
+select,
+button {
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #f0f0f0;
+    transition: all 0.3s ease-in-out;
+}
 
-            input:focus,
-            select:focus {
-                outline: none;
-                border-color: #007bff;
-                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-            }
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #00b4d8;
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.8);
+}
 
-            button {
-                background-color: #007bff;
-                color: #fff;
-                border: none;
-                cursor: pointer;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
+button {
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-            button:hover {
-                background-color: #0056b3;
-            }
+button:hover {
+    background-color: #0096c7;
+}
 
-            .error {
-                color: #e74c3c;
-                font-size: 0.85rem;
-                margin-bottom: 10px;
-            }
+.error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
 
-            @media (max-width: 480px) {
-                .container {
-                    padding: 20px;
-                }
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
 
-                h1 {
-                    font-size: 1.5rem;
-                }
+    h1 {
+        font-size: 1.5rem;
+    }
 
-                input,
-                select,
-                button {
-                    font-size: 0.9rem;
-                }
-            }
+    input,
+    select,
+    button {
+        font-size: 0.9rem;
+    }
+}
+
         </style>
     </head>
     <body>
