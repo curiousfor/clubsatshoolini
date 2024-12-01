@@ -275,7 +275,7 @@ export const clubs = [
       tags: ["chess", "ChessEnthusiasts", "LearnChes"],
       president:"Samarth Gandhi",
       contact:"9819422904",
-      img: "images/chessclub.jpg",
+      img: "images/chess.jpg",
       description:"Embracing chess enthusiasts of all levels, Deez Knights Chess Club is a sanctuary for those enamored with the game. It is a community full of chess enthusiasts and people who are eager to learn chess, with a vision to develop a chess culture in the University. We have training sessions, casual meetups, mind-bending quizzes, puzzle-solving challenges, adrenaline-pumping tournaments, and a lot more."
     },
     {
@@ -305,4 +305,24 @@ export const clubs = [
       img: "images/acm.jpg",
       description:"In November 2023, Shoolini University established an ACM Student Chapter, aimed at enhancing student engagement through a vibrant community. This chapter offers numerous advantages, including national and international networking opportunities, event and project funding, and support for professional awareness programs. Students can leverage ACM affiliation to develop projects, secure sponsorship, and connect with like-minded peers, enriching their knowledge and skills while fostering a strong sense of community and collaboration."
     },
+    {
+      name: "Astroverse",
+      type: "acedemics",
+      tags: ["astronomy", "stargazing", "space"],
+      president: "Aryan Sharma",
+      contact: "9876543210",
+      img: "images/astroverse.jpg",
+      description: "Astroverse Club brings together space enthusiasts and stargazers who share a passion for the universe. Join us for exciting events like night sky observation, astronomy workshops, discussions on celestial phenomena, and much more. Explore the wonders of the cosmos with like-minded individuals and fuel your curiosity about the vast universe."
+    },
+    {
+      name: "AlgoZenith",
+      type: "tech",
+      tags: ["algorithm", "coding", "problemSolving"],
+      president: "kshitij",
+      contact: "9345678901",
+      img: "images/algozenith.jpg",
+      description: "AlgoZenith Club is a hub for coding enthusiasts and problem solvers. We aim to enhance your algorithmic thinking and problem-solving skills through regular coding challenges, hackathons, workshops, and study sessions. Join us to sharpen your competitive programming abilities, collaborate with peers, and take your coding skills to new heights."
+    }
+    
+    
   ];
