@@ -14,8 +14,6 @@ html, body {
 
 /* Header Section */
 .header {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: large;
     background-image: linear-gradient(rgba(30, 6, 4, 0.7), rgba(54, 24, 24, 0.7)), url(other-images/shoolini\ campus.jpg);
     min-height: 100vh;
     background-position: center;
@@ -78,8 +76,6 @@ nav img {
 
 /* Text Box */
 .text-box {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: large;
     color: white;
     text-align: center;
     position: absolute;
@@ -89,13 +85,11 @@ nav img {
 }
 
 .text-box h1 {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 62px;
     margin-bottom: 10px;
 }
 
 .text-box p {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     margin-bottom: 40px;
 }
@@ -106,7 +100,6 @@ nav img {
     border: 1px solid white;
     padding: 20px 50px;
     font-size: 22px;
-    font-family: 'Times New Roman', Times, serif;
     transition: background 1s;
 }
 
