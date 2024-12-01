@@ -32,7 +32,7 @@ async function connectToDatabase() {
     const pool = mysql.createPool({
       host: "localhost",
       user: "root",
-      password: "mysql9199",
+      password: "Shaurya9918726733",
       database: "user_data",
     });
 
@@ -98,7 +98,7 @@ function sendSuccessEmail() {
   // Define the email options
   const mailOptions = {
     from: "clubsatshoolini@gmail.com",
-    to: "", // Manually set recipient
+    to: "shauryapathak517@gmail.com", // Manually set recipient
     subject: "New Club Registration",
     text: "A new student has successfully registered for a club. Check the details in the admin panel.",
   };
