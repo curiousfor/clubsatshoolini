@@ -32,7 +32,7 @@ async function connectToDatabase() {
     const pool = mysql.createPool({
       host: "localhost",
       user: "root",
-      password: "mysql9199",
+      password: "Shaurya9918726733",
       database: "user_data",
     });
 
