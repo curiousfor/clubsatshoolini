@@ -15,7 +15,7 @@ export const clubs = [
     president: "Anushka Bajpai",
     contact: "6265138028",
     img: "images/raagrang.png",
-    description: "“Connectens corda cum musica.At Raag Rang, we believe in connecting hearts with music.Musicisuniversal.It heals, nourishes,protects, enriches and soothes the hearts of everyone it touches."
+    description: "Connectens corda cum musica.At Raag Rang, we believe in connecting hearts with music.Musicisuniversal.It heals, nourishes,protects, enriches and soothes the hearts of everyone it touches."
   },
   {
     name: "Satrangi Strokes",
