@@ -98,7 +98,7 @@ function sendSuccessEmail() {
   // Define the email options
   const mailOptions = {
     from: "clubsatshoolini@gmail.com",
-    to: "", // Manually set recipient
+    to: "shauryapathak517@gmail.com", // Manually set recipient
     subject: "New Club Registration",
     text: "A new student has successfully registered for a club. Check the details in the admin panel.",
   };
