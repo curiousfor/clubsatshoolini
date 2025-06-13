@@ -51,17 +51,16 @@ function openModal(club) {
             <div class="tags">
                 <strong>Tags:</strong> ${club.tags.map(tag => `<span class="tag">${tag}</span>`).join(", ")}
             </div>
-                 <footer class="modal-footer">
-                <p>If you would like to know more, feel free to contact the president!</p>
-            </footer>
-            <button class="join-club">join</button>
+            <button class="join-club">Join</button>
         </div>
   `;
   modal.style.display = "block";
   overlay.style.display = "block";
 
   // Add event listener to close button
-  //modal.querySelector(".close-modal").addEventListener("click", closeModal);
+  modal.querySelector(".join-club").addEventListener("click", function() {
+    window.location.href = "http://localhost:1000"; // Add full URL
+  });
 }
 
 // Function to close modal
@@ -93,6 +92,7 @@ function updateActiveTab(activeType) {
       }
   });
 }
+
 // Event listeners for tab buttons
 document.querySelectorAll(".tab-button").forEach(button => {
   button.addEventListener("click", () => {
@@ -121,5 +121,3 @@ overlay.addEventListener("click", closeModal); // Close modal if overlay is clic
 
 // Initial display of all clubs
 filterClubsByType("all");
-
-

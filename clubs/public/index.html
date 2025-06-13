@@ -1,0 +1,225 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student Registration</title>
+        <style>
+         /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    background: linear-gradient(135deg, #1c1c1c, #333);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f0f0f0;
+}
+
+.container {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 0px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00b4d8;
+    letter-spacing: 1px;
+    padding-top: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: 600;
+    text-align: left;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+input,
+select,
+button {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    padding: 12px 15px;
+    border-radius: 0px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #f0f0f0;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus,
+select:focus {
+    border-radius: 0px;
+    outline: none;
+    border-color: #00b4d8;
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.8);
+}
+
+button {
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #028090;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 0.9rem;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Registration Form</h1>
+            <form
+                id="registrationForm"
+                action="http://localhost:1000/process_registration"
+                method="POST"
+            >
+                <div id="error" class="error"></div>
+
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="off"
+                    placeholder="Enter your full name"
+                    required
+                />
+
+                <label for="course">Course</label>
+                <input
+                    type="text"
+                    id="course"
+                    name="course"
+                    autocomplete="off"
+                    placeholder="Enter your course"
+                    required
+                />
+
+                <label for="semester">Semester</label>
+                <input
+                    type="number"
+                    id="semester"
+                    name="semester"
+                    autocomplete="off"
+                    placeholder="Enter your semester"
+                    min="1"
+                    required
+                />
+
+                <label for="mobileNumber">Mobile Number</label>
+                <input
+                    type="tel"
+                    id="mobileNumber"
+                    name="mobileNumber"
+                    autocomplete="off"
+                    placeholder="Enter your mobile number"
+                    required
+                />
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your university email"
+                    autocomplete="off"
+                    required
+                />
+
+                <label for="Club">Choose a club:</label>
+                <select id="Club" name="Club" required>
+                    <option value="" disabled selected>Select a club</option>
+                    <option value="acm_student_chapter">ACM Student Chapter</option>
+                    <option value="animal_lovers_club">Animal Lovers Club</option>
+                    <option value="antarmada">Antarmada</option>
+                    <option value="arcadia_club">Arcadia Club</option>
+                    <option value="bodh_quiz_club">BODH QUIZ CLUB</option>
+                    <option value="cinedicate_the_filmmaking_club">Cinedicate-The Filmmaking Club</option>
+                    <option value="cuisine_club">Cuisine Club</option>
+                    <option value="deez_knights_chess_club">Deez Knights Chess Club</option>
+                    <option value="drishyam_club">Drishyam Club</option>
+                    <option value="environment_and_sustainability_club">Environment and Sustainability Club</option>
+                    <option value="genomage_club">Genomage Club</option>
+                    <option value="hackhound_cybersecurity_club">Hackhound (Cybersecurity Club)</option>
+                    <option value="himshobla_club">Himshobla Club</option>
+                    <option value="ieee_shoolini_student_branch">IEEE Shoolini Student Branch</option>
+                    <option value="iic_institution_innovation_council">IIC (Institution Innovation Council)</option>
+                    <option value="joypad_symphony">Joypad Symphony</option>
+                    <option value="katha">Katha</option>
+                    <option value="lit_witz_club">Lit Witz Club</option>
+                    <option value="loudspeakers_club">Loudspeakers Club</option>
+                    <option value="mountain_rangers">Mountain Rangers</option>
+                    <option value="ounce_motorsports">Ounce Motorsports</option>
+                    <option value="pedals_cycling_club">Pedals Cycling Club</option>
+                    <option value="prism_club">Prism Club</option>
+                    <option value="raag_rang_club">Raag Rang Club</option>
+                    <option value="sanchay_maths_club">Sanchay:Maths Club</option>
+                    <option value="saksham_dance_club">Saksham Dance Club</option>
+                    <option value="satrangi_strokes">Satrangi Strokes</option>
+                    <option value="shakerz_skaterz">Shakerz Skaterz</option>
+                    <option value="shoolini_creative_studio">Shoolini Creative Studio</option>
+                    <option value="student_research_council_shoolini">Student Research Council Shoolini</option>
+                    <option value="the_red_taboos_club">The Red Taboos Club</option>
+                    <option value="vision_threads_club">Vision Threads Club</option>
+                    <option value="weeb_club">Weeb Club</option>
+                    <option value="ycc_club">YCC Club</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </body>
+</html>

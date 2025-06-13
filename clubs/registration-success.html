@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: linear-gradient(135deg, #1c1c1c, #333);
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #00b4d8;
+            text-shadow: 0 0 10px rgba(0, 180, 216, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #ddd;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            color: #fff;
+            background-color: #00b4d8;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.3);
+        }
+
+        .button:hover {
+            background-color: #028090;
+            box-shadow: 0 8px 30px rgba(0, 150, 199, 0.6);
+        }
+
+        @media (max-width: 600px) {
+            .button-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Successful!</h1>
+    <div class="message">Thank you for registering. You can now explore more clubs!</div>
+
+    <div class="button-group">
+        <button class="button" aria-label="Explore Clubs" onclick="window.location.href='clubs-page.html'">Explore Clubs</button>
+        <button class="button" aria-label="Register Another" onclick="window.location.href='index.html'">Register Another</button>
+    </div>
+
+</body>
+</html>

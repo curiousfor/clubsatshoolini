@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #9ba8ab; /* Dark background */
+    font-family: "Times New Roman", Times, serif;
+    background-color: #080710; /* Dark background */
     color: #333;
     display: flex;
     flex-direction: column;
@@ -18,26 +18,48 @@ body {
 
 /* Header Styles */
 header {
-    background-color:#11212d;
+    background-color: #080710;
     color: white;
     padding: 40px 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
 h1 {
+    font-family: "Times New Roman", Times, serif;
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
 .home-back {
-    margin-bottom: 10px;
+    margin: 20px;
+}
+
+.home-button {
+    text-decoration: none;
+    padding: 10px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 0px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+    /* border-bottom: 2px white; */
+    border: 2px wheat;
+}
+
+.home-button:hover {
+    background-color: #ccd0cf;
+    color: black;
 }
 
 .back-link {
     text-decoration: none;
     color: #f2f2f2;
     font-size: 1.2rem;
+    font-family: "Times New Roman", Times, serif;
     transition: color 0.3s;
 }
 
@@ -59,10 +81,13 @@ h1 {
     width: 250px;
     border: 1px solid #ccc;
     border-radius: 0px;
-    font-size: 1rem;
+    font-size: large;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .search-button {
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
     background-color: black;
     color: white;
     padding: 10px 20px;
@@ -83,8 +108,8 @@ h1 {
     justify-content: center;
     gap: 15px;
     padding: 20px;
-    background-color: #11212d;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #080710;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .tab-button {
@@ -94,8 +119,11 @@ h1 {
     border: none;
     border-radius: 0px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s, transform 0.3s;
+    font-size: large;
+    font-family: "Times New Roman", Times, serif;
+    transition:
+        background-color 0.3s,
+        transform 0.3s;
 }
 
 .tab-button:hover,
@@ -107,10 +135,10 @@ h1 {
 
 /* Clubs List */
 .club-container {
-    background-color: #9ba8ab; /* Darker background for the club list */
+    background-color: #080710; /* Darker background for the club list */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 50px 60px;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -118,53 +146,59 @@ h1 {
 
 /* Club Card */
 .club-card {
-    background-color: #4a5c6a; /* Slightly lighter for contrast */
+    background-color: white; /* Slightly lighter for contrast */
     border-radius: 0px;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sharper shadow */
-    color: #f2f2f2;
+    box-shadow: 0 4px 10px rgb(105, 100, 100); /* Sharper shadow */
+    color: black;
     text-align: center;
-    font-family: monospace, monospace;
-    transition: transform 0.3s, box-shadow 0.3s;
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+    transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
     animation: fadeInScale 0.5s ease;
     height: 300x;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-   
+    transform: scale(1.1);
+    /* box-shadow: white 2px; */
 }
 
 .club-card img {
     width: 100%; /* Makes the image fill the width of the card */
     height: 200px; /* Maintains aspect ratio */
-    border-radius: 8px; /* Optional: to match the rounded corners of the card */
+    border-radius: 0px; /* Optional: to match the rounded corners of the card */
     object-fit: cover; /* Ensures the image covers the container area */
 }
 /* Club Name and Tags Styling */
 .club-card h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
     margin-top: 10px; /* Add some space above the name */
     overflow-wrap: break-word; /* Prevent long words from breaking layout */
 }
 
 .club-card p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
     margin-top: 5px; /* Add some space above the tags */
     overflow-wrap: break-word; /* Prevent long words from breaking layout */
-    
 }
 
 /* Additional styling for tags if needed */
 .club-type {
     margin-top: auto; /* Pushes tags to the bottom of the card */
-    font-size: 0.9rem; /* Adjust font size if necessary */
+    font-size: large; /* Adjust font size if necessary */
     white-space: nowrap; /* Prevents wrapping if you want single line tags */
     overflow: hidden; /* Hides overflow text */
     text-overflow: ellipsis; /* Adds ellipsis (...) for overflowing text */
 }
 
 .club-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(39, 37, 37, 0.25); /* Stronger hover effect */
+    transform: translateY(-3px) scale(1.045);
+    /* border-color: red; */
+    box-shadow: 0 0 25px 8px rgba(16, 203, 255, 0.7);
 }
 
 /* Club Card Animation */
@@ -197,12 +231,6 @@ footer {
     }
 }
 
-
-
-
-
-
-
 /* New lines of code for cards detials */
 /* Modal styles */
 .modal {
@@ -212,12 +240,13 @@ footer {
     transform: translate(-50%, -50%);
     width: 90%; /* Responsive width */
     max-width: 600px; /* Maximum width */
-    background-color: #fff; /* White background for contrast */
+    background-color: #ccd0cf; /* White background for contrast */
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 0px; /* Rounded corners */
     display: none; /* Hidden initially */
+    border-radius: 0px;
 }
 
 /* Scrollable content area within modal */
@@ -232,7 +261,7 @@ footer {
 
 .modal-content::-webkit-scrollbar-thumb {
     background-color: #ccc;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 
 .modal-content::-webkit-scrollbar-track {
@@ -241,9 +270,10 @@ footer {
 
 .modal img {
     width: 100%; /* Full width for images */
+    margin-left: -15px;
     height: auto; /* Maintain aspect ratio */
     max-height: 300px; /* Fixed height for uniformity */
-    border-radius: 10px; /* Rounded corners for images */
+    border-radius: 0px; /* Rounded corners for images */
 }
 
 .modal h3 {
@@ -251,16 +281,15 @@ footer {
     font-size: 1.8rem; /* Larger font size */
 }
 
-
 .modal p {
     margin-top: 10px; /* Space above paragraph */
 }
 
 /* Styling for President Info and Contact Info */
-.president-info, .contact-info {
+.president-info,
+.contact-info {
     margin-top: 10px; /* Space around sections */
 }
-
 
 /* Tags Styling */
 .tags {
@@ -273,17 +302,6 @@ footer {
     border-radius: 12px; /* Rounded corners for tags */
     padding: 5px 10px; /* Padding around tags */
     margin-right: 5px; /* Space between tags */
-}
-
-/* Footer Styles */
-.modal-footer {
-    margin-top: 20px; /* Space above footer */
-    padding-top: 10px; /* Padding at the top of footer */
-    border-top: 1px solid #ccc; /* Top border for separation */
-}
-
-.modal-footer p {
-    font-style: italic; /* Italicize note text */
 }
 
 /* Overlay Styles */
@@ -300,18 +318,18 @@ footer {
 
 /* Back to Clubs button */
 .join-club {
-    background-color: #1b3e76; /* Button color */
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+    background-color: #000000; /* Button color */
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer;
     margin-top: 15px; /* Space above button */
     transition: background-color 0.3s;
-    
 }
 
 .close-modal:hover {
     background-color: #9a3a3a; /* Darker shade on hover */
 }
-

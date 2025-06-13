@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Contact Header -->
+  <section class="contact-header">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you. Reach out to us for queries, suggestions, or collaborations!</p>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form">
+    <h2>Get in Touch</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <div class="input-container">
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          <i class="fa fa-user"></i> <!-- User icon -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <div class="input-container">
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          <i class="fa fa-envelope"></i> <!-- Email icon -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <div class="input-container">
+          <textarea id="message" name="message" placeholder="Type your message here" rows="5" required></textarea>
+          <i class="fa fa-comment"></i> <!-- Message icon -->
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+    <div id="thankYouMessage" style="display: none; margin-top: 20px; font-size: 1.2em; color: green;">
+      Thanks for your response! We’ll get back to you soon.
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="contact-footer">
+    <p>Follow us on:</p>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+    <p>&copy; 2024 Your Organization. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Link to Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
+    // JavaScript to handle form submission
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contactForm");
+      const thankYouMessage = document.getElementById("thankYouMessage");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Optionally, collect form data (e.g., for sending to a server)
+        const formData = new FormData(form);
+        const formObject = {};
+        formData.forEach((value, key) => {
+          formObject[key] = value;
+        });
+
+        // Simulate form submission (you can add server communication here)
+        console.log("Form submitted:", formObject);
+
+        // Show thank you message
+        thankYouMessage.style.display = "block";
+
+        // Clear the form
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>

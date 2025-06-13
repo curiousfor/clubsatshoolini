@@ -38,12 +38,17 @@ nav {
 
 /* Logo */
 nav img {
-    width: 100px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -40px;
+   
 }
+
 
 /* Navigation Links */
 .nav-links {
     text-align: right;
+    margin-top: -30px;
 }
 
 .nav-links ul {

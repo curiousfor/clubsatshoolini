@@ -1,0 +1,165 @@
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #080710;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  color: #ffffff;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape:first-child {
+  background: linear-gradient(#1845ad, #23a2f6);
+  left: -80px;
+  top: -80px;
+}
+
+.shape:last-child {
+  background: linear-gradient(to right, #ff512f, #f09819);
+  right: -30px;
+  bottom: -80px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 0px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+}
+
+.form-container h3 {
+  font-size: 32px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+
+.form-container button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  color: #080710;
+  border-radius: 0px;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
+
+.home-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px; /* Move the home button to the right */
+  background-color: #ffffff;
+  color: #080710;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.home-btn:hover {
+  background-color: #3498db;
+}
+
+/* Club info section */
+.club-info {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.club-info h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.club-info p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for member cards */
+.members-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  max-width: 1000px;
+  margin-top: 30px;
+}
+
+/* Member card styling */
+.member-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.member-card p {
+  margin: 10px 0;
+  font-size: 23px;
+}
+
+.member-card hr {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
